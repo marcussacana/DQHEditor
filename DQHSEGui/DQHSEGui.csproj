@@ -75,7 +75,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DQHStringEditor\DQHEditor.csproj">
+    <ProjectReference Include="..\DQHEditor\DQHEditor.csproj">
       <Project>{489c3d6e-98f1-4d6b-a1bf-0364c6f5d0cb}</Project>
       <Name>DQHEditor</Name>
     </ProjectReference>

@@ -38,9 +38,31 @@ namespace DQHSEGui {
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e) {
             listBox1.Items.Clear();
             byte[] Script = System.IO.File.ReadAllBytes(openFileDialog1.FileName);
-            Editor = new LXEditor(Script);
+            Editor = new LXEditor(Script, SelectedEncoding());
             foreach (string str in Editor.Import())
                 listBox1.Items.Add(str);
+        }
+
+        private Encoding SelectedEncoding() {
+            switch (ecotb.Text.ToLower().Trim()) {
+                case "utf-8":
+                case "utf8":
+                    return Encoding.UTF8;
+                case "utf-16":
+                case "unicode":
+                case "utf16":
+                    return Encoding.Unicode;
+                case "butf16":
+                case "butf-16":
+                case "bunicode":
+                    return Encoding.BigEndianUnicode;
+                case "s-jis":
+                case "shift-jis":
+                case "sjis":
+                    return Encoding.GetEncoding(932);
+                default:
+                    return Encoding.GetEncoding(int.Parse(ecotb.Text.ToLower().Trim()));
+            }
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e) {

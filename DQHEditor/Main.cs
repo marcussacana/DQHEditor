@@ -11,8 +11,10 @@ namespace DQHEditor
         byte[] Script;
         const int BasePos = 0x14;
         int EndPos;
-        public LXEditor(byte[] Script) {
+        Encoding Eco;
+        public LXEditor(byte[] Script, Encoding Encoding) {
             this.Script = Script;
+            Eco = Encoding;
         }
 
         public string[] Import() {
@@ -24,7 +26,7 @@ namespace DQHEditor
                 while (Script[Pos] != 0x00)
                     Buffer.Add(Script[Pos++]);
                 EndPos = Pos;
-                Strings[i] = Encoding.UTF8.GetString(Buffer.ToArray());
+                Strings[i] = Eco.GetString(Buffer.ToArray());
             }
             return Strings;
         }
@@ -37,7 +39,7 @@ namespace DQHEditor
             for (int i = 0; i < Strings.Length; i++) {
                 int Offset = StringTable.Length + (Strings.Length*4);
                 Append(ref OffsetTable, BitConverter.GetBytes(Offset));
-                Append(ref StringTable, Encoding.UTF8.GetBytes(Strings[i] + "\x0"));
+                Append(ref StringTable, Eco.GetBytes(Strings[i] + "\x0"));
             }
             byte[] Rst = new byte[0];
             Append(ref Rst, Begin);

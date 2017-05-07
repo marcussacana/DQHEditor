@@ -35,6 +35,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.ecotb = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(12, 12);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(369, 276);
+            this.listBox1.Size = new System.Drawing.Size(601, 452);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -55,9 +56,9 @@
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(12, 301);
+            this.textBox1.Location = new System.Drawing.Point(12, 476);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(369, 22);
+            this.textBox1.Size = new System.Drawing.Size(530, 22);
             this.textBox1.TabIndex = 1;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
@@ -74,14 +75,14 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -91,7 +92,7 @@
             this.extractToolStripMenuItem,
             this.repackToolStripMenuItem});
             this.strPackgetToolStripMenuItem.Name = "strPackgetToolStripMenuItem";
-            this.strPackgetToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
+            this.strPackgetToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.strPackgetToolStripMenuItem.Text = "StrPackget";
             // 
             // extractToolStripMenuItem
@@ -130,12 +131,22 @@
             this.openFileDialog2.Title = "Open Strs Packget";
             this.openFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk);
             // 
+            // ecotb
+            // 
+            this.ecotb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ecotb.Location = new System.Drawing.Point(548, 476);
+            this.ecotb.Name = "ecotb";
+            this.ecotb.Size = new System.Drawing.Size(65, 22);
+            this.ecotb.TabIndex = 2;
+            this.ecotb.Text = "UTF8";
+            // 
             // DQHSEGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 335);
+            this.ClientSize = new System.Drawing.Size(625, 510);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.ecotb);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listBox1);
             this.Name = "DQHSEGui";
@@ -159,6 +170,7 @@
         private System.Windows.Forms.ToolStripMenuItem extractToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem repackToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
+        private System.Windows.Forms.TextBox ecotb;
     }
 }
 
