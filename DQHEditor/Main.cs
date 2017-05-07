@@ -9,7 +9,7 @@ namespace DQHEditor
     public class LXEditor
     {
         byte[] Script;
-        const int BasePos = 0x14;
+        int BasePos = 0;
         int EndPos;
         Encoding Eco;
         public LXEditor(byte[] Script, Encoding Encoding) {
@@ -18,6 +18,7 @@ namespace DQHEditor
         }
 
         public string[] Import() {
+            BasePos = GetDWAt(Script, 0xC);
             int Count = GetDWAt(Script, BasePos)/4;
             string[] Strings = new string[Count];
             for (int i = 0; i < Count; i++) {
